@@ -20,96 +20,23 @@
             <th class="missed-col">Days Missed-col</th>
         </tr><thead>
       </script>
+      <script type="text/template" class ="template" id="studentTemp">
+        <tr class="student">
+          <td class="name-col"><%- student.name %></td>
+          <% _.each( student.attendance, function(att){ %>
+            <td class="attend-col"><input type="checkbox" <%- att ? "checked": "" %> ></td>
+          <% }); %>
+          <td class="missed-col"><%- student.missed %></td>
+        </tr>
+      </script>
         
         <h1>Udacity Attendance</h1>
 
         <table>
-            <tbody>
-                <tr class="student">
-                    <td class="name-col">Slappy the Frog</td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="missed-col">0</td>
-                </tr>
-                <tr class="student">
-                    <td class="name-col">Lilly the Lizard</td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="missed-col">0</td>
-                </tr>
-                <tr class="student">
-                    <td class="name-col">Paulrus the Walrus</td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="missed-col">0</td>
-                </tr>
-                <tr class="student">
-                    <td class="name-col">Gregory the Goat</td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="missed-col">0</td>
-                </tr>
-                <tr class="student">
-                    <td class="name-col">Adam the Anaconda</td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="attend-col"><input type="checkbox"></td>
-                    <td class="missed-col">0</td>
-                </tr>
-            </tbody>
+            <tbody></tbody>
         </table>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="js/model.js"></script>
         <script src="js/app.js"></script>
     </body>
 </html>
