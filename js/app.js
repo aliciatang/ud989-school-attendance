@@ -9,29 +9,27 @@ $(function(){
     ],
     classes: 12,
     init: function() {
-      this.attendance = {};
-      if(!localStorage.attendance) {
+      if(!localStorage.students) {
          model.students.forEach(function(student) {
-           model.attendance[student.name] = [];
+           student.attendance = [];
            for(var i = 0 ; i < model.classes ; i++)
-               model.attendance[student.name].push(Math.random() >= 0.5);
+               student.attendance.push(Math.random() >= 0.5);
          });
-         localStorage.attendance = JSON.stringify(model.attendance);
+         localStorage.students = JSON.stringify(model.students);
       } else {
-         this.attendance = JSON.parse(localStorage.attendance);
+         this.students = JSON.parse(localStorage.students);
       }
       this.countMissing();
     },
     countMissing: function() {
       this.students.forEach(function(student) {
-        student.attendance = model.attendance[student.name];
         student.missed = student.attendance.reduce(function(pre, cur){ return pre + cur;});
       });
     },
     updateAttendance: function(student, index, checked) {
-      this.attendance[student.name][index] = checked;
+      student.attendance[index] = checked;
       student.missed = student.attendance.reduce(function(pre, cur){ return pre + cur;});
-      localStorage.attendance = JSON.stringify(this.attendance);
+      localStorage.students = JSON.stringify(this.students);
     },
   };
 
